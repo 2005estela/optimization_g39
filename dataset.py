@@ -98,10 +98,10 @@ A_gris : Dict[int, float]          = {}   # Dotación gris mensual (m³)
 f                    : Dict[Tuple[int,int], int]    = defaultdict(int)    # Frecuencia mínima
 r_parque             : Dict[Tuple[int,int], int]    = defaultdict(int)    # Frecuencia parques
 Vmin                 : Dict[Tuple[int,int], float]  = defaultdict(float)  # Volumen mínimo
-c_pot  : float = 0.0    # Costo agua potable (USD/m³)
-c_gris : float = 0.0    # Costo agua gris (USD/m³)
-lam    : float = 0.0    # Penalización déficit (USD/m³)
-M      : float = 0.0    # Límite hidráulico (m³/h)
+c_pot  : float = 1.65   # Costo agua potable (USD/m³)
+c_gris : float = 0.49   # Costo agua gris (USD/m³)
+lam    : float = 2.48    # Penalización déficit (USD/m³)
+M      : float = 9.36    # Límite hidráulico (m³/h)
 
 # ---------------------------------------------------------------------------
 # 4) VERIFICACIÓN RÁPIDA (opcional)
@@ -109,3 +109,8 @@ M      : float = 0.0    # Límite hidráulico (m³/h)
 if __name__ == "__main__":
     print(f"UGAs: {len(Z)}")
     print(f"M = {M} m³/h   |   c_pot = {c_pot} USD/m³   |   λ = {lam}")
+
+# ---------------------------------------------------------------------------
+# 5) VARIABLES DEL MODELO
+# ---------------------------------------------------------------------------
+riego_nocturno = 1
